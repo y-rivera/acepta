@@ -42,10 +42,19 @@
       background-color: #ccc;
       color: #333;
     }
+    /* Asegúrate de que la imagen no se salga de la pantalla */
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+    }
   </style>
 </head>
 <body>
-  <h1>¿Te gustaría ser mi novia? ❤️</h1>
+  <!-- Imagen antes del texto -->
+  <img src="img.png" alt="Imagen romántica">
+
+  <h1>¿Le gustaría ser mi novia? ❤️</h1>
   <div class="buttons">
     <button id="yes-button">Sí</button>
     <button id="no-button">No</button>
@@ -57,7 +66,7 @@
 
     // Botón "Sí"
     document.getElementById("yes-button").addEventListener("click", () => {
-      const message = "Hola, sí! Me encantaría ser tu novia";
+      const message = "Hola, sí!  Me encantaría ser tu novia";
       const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
       window.location.href = url; // Redirigir a WhatsApp
     });
@@ -70,3 +79,4 @@
   </script>
 </body>
 </html>
+
