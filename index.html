@@ -1,19 +1,72 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <title>Formulario de contacto</title>
-    <meta charset="UTF-8">
-    <link  rel="stylesheet" href="estilo.css" >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Quieres ser mi novia?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      color: #fff;
+      background-color: #ff6f61;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #e55b50;
+    }
+    #no-button {
+      background-color: #ccc;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-    <form action="enviar.php" method="post">
-    <h2>REGISTRATE</h2>
-    <input type="text" name="Nombre" placeholder="Nombre" required>
-    <input type="text" name="Correo" placeholder="Correo" required>
-    <input type="text" name="Telefono" placeholder="Telefono" required>
-   <textarea name="mensaje" placeholder="Escriba aqui su mensaje" required></textarea>
-        
-    <input type="submit" value="ENVIAR" id="boton">
-    </form>  
+  <h1>¿Te gustaría ser mi novia? ❤️</h1>
+  <div class="buttons">
+    <button id="yes-button">Sí</button>
+    <button id="no-button">No</button>
+  </div>
+
+  <script>
+    // Tu número de WhatsApp en formato internacional sin el signo "+"
+    const whatsappNumber = "50379902031"; 
+
+    // Botón "Sí"
+    document.getElementById("yes-button").addEventListener("click", () => {
+      const message = "Hola, sí! ❤️ Me encantaría ser tu novia 😊";
+      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      window.location.href = url; // Redirigir a WhatsApp
+    });
+
+    // Botón "No"
+    document.getElementById("no-button").addEventListener("click", () => {
+      // Oculta el botón "No"
+      document.getElementById("no-button").style.display = "none";
+    });
+  </script>
 </body>
 </html>
